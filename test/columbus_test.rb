@@ -1,4 +1,4 @@
-require 'test_helper'
+$:.unshift '.';require File.dirname(__FILE__) + '/test_helper'
 
 class ColumbusTest < Test::Unit::TestCase
   context "Initialization" do

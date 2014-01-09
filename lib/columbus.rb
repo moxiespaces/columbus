@@ -2,7 +2,7 @@ require 'logger'
 require 'net/http'
 require 'uri'
 require 'rubygems'
-require 'hpricot'
+require 'nokogiri'
 
 require File.dirname(__FILE__) + '/columbus/feed'
 require File.dirname(__FILE__) + '/columbus/link'
@@ -35,13 +35,13 @@ class Columbus
   
   private  
     def link_to_feed(element)
-      link = Link.new(url, element.attributes['href'], element.attributes['title'])
+      link = Link.new(url, element.attributes['href'].to_s, element.attributes['title'].to_s)
       Feed.new(link.absolute_url, link.clean_title)
     end
   
     def parse_links(html)
-      Hpricot(html).search('link').select do |link|
-        link.attributes['type'] =~ /application\/(rss|atom)\+xml/i
+      Nokogiri::HTML(html).search('link').select do |link|
+        link.attributes['type'].to_s =~ /application\/(rss|atom)\+xml/i
       end
     end
 end

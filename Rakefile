@@ -4,7 +4,7 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "columbus"
+    gem.name = "moxie-columbus"
     gem.summary = %Q{Autodiscovers feeds from urls}
     gem.email = "nunemaker@gmail.com"
     gem.homepage = "http://github.com/jnunemaker/columbus"
@@ -16,14 +16,14 @@ rescue LoadError
   puts "Jeweler not available. Install it with: sudo gem install technicalpickles-jeweler -s http://gems.github.com"
 end
 
-require 'rake/rdoctask'
-Rake::RDocTask.new do |rdoc|
-  rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = 'columbus'
-  rdoc.options << '--line-numbers' << '--inline-source'
-  rdoc.rdoc_files.include('README*')
-  rdoc.rdoc_files.include('lib/**/*.rb')
-end
+# require 'rake/task'
+# Rake::Task.new do |rdoc|
+#   rdoc.rdoc_dir = 'rdoc'
+#   rdoc.title = 'columbus'
+#   rdoc.options << '--line-numbers' << '--inline-source'
+#   rdoc.rdoc_files.include('README*')
+#   rdoc.rdoc_files.include('lib/**/*.rb')
+# end
 
 require 'rake/testtask'
 Rake::TestTask.new(:test) do |test|
