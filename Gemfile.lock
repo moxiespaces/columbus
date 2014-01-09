@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     moxie-columbus (0.1.2.1)
-      nokogiri (>= 1.5.0)
+      moxie-columbus
 
 GEM
   remote: https://gems.gemfury.com/qsNMqt3pW3Ar1QaNqsdX/
